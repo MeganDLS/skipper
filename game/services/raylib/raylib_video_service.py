@@ -24,7 +24,6 @@ class RaylibVideoService(VideoService):
         pyray.clear_background(raylib_color)
 
     def draw_image(self, image, position):
-        # filepath = image.name()
         filepath = image.get_filename()
         # fixed os dependent filepath
         filepath = str(pathlib.Path(filepath))
@@ -35,7 +34,7 @@ class RaylibVideoService(VideoService):
         scale = image.get_scale()
         rotation = image.get_rotation()
         # tint = self._to_raylib_color(PURPLE) 
-        tint = self._to_raylib_color(Color(109, 104, 117)) 
+        tint = self._to_raylib_color(Color(255, 255, 255)) 
         pyray.draw_texture_ex(texture, raylib_position, rotation, scale, tint)
          
     def draw_rectangle(self, rectangle, color, filled = False):
