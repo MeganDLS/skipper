@@ -36,10 +36,10 @@ FONT_SMALL = 25
 FONT_LARGE = 50
 
 # SOUND
-BOUNCE_SOUND = "assets\\sounds\\ice.wav"
-WELCOME_SOUND = "assets\\sounds\\splash.wav"
-OVER_SOUND = "assets\\sounds\\bubbles.wav"
-MUSIC = "assets\\sounds\\happyfeet.mp3"
+BOUNCE_SOUND = assetsdir /"sounds" / "ice.wav"
+WELCOME_SOUND = assetsdir / "sounds" / "splash.wav"
+OVER_SOUND = assetsdir / "sounds" / "bubbles.wav"
+MUSIC = assetsdir / "sounds" / "happyfeet.mp3"
 
 # TEXT
 ALIGN_CENTER = 0
@@ -110,7 +110,7 @@ SCORE_FORMAT = "Cheezy Dibbles: {}"
 
 # ICE CUBES
 ICE_GROUP = "ice"
-ICE_IMAGE = "assets/images/smlice.png"
+ICE_IMAGE = assetsdir /"images" / "smlice.png"
 ICE_WIDTH = 200
 ICE_HEIGHT = 488
 ICE_VELOCITY = 4
@@ -118,7 +118,7 @@ ICE_QUANTITY = 25
 
 # JUMPER PENGUIN
 PENGUIN_GROUP = "penguins"
-PENGUIN_IMAGES = "assets/images/smlskipper.png"
+PENGUIN_IMAGES = assetsdir /"images" / "smlskipper.png"
 PENGUIN_WIDTH = 132
 PENGUIN_HEIGHT = 136
 PENGUIN_VELOCITY = 5
@@ -128,7 +128,7 @@ PENGUIN_RATE = 6
 # TODO if theres time.
 # CHEEZY DIBBLES
 DIBBLE_GROUP = "dibbles"
-DIBBLE_IMAGE = "assets/images/cheeto.png"
+DIBBLE_IMAGE = assetsdir / "images" / "cheeto.png"
 DIBBLE_POINTS = 50
 
 # DIALOG
