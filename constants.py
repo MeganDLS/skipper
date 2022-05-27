@@ -31,7 +31,7 @@ FIELD_RIGHT = SCREEN_WIDTH
 # FONT
 FONT_SERIF = assetsdir / "fonts" / "Quicksand-Medium.ttf"
 # "assets\\fonts\Quicksand-Medium.ttf"
-FONT_SCRIPT = "assets/fonts/Sacramento-Regular.ttf"
+FONT_SCRIPT = assetsdir / "fonts"/"Sacramento-Regular.ttf"
 FONT_SMALL = 25
 FONT_LARGE = 50
 
