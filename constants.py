@@ -2,11 +2,16 @@
 """
 from pathlib import Path
 from game.casting.color import Color
+from game.casting.image import Image
+
 #absolute path -- what is the parent directory?
-rootdir = Path(__file__).parent
+ROOTDIR = Path(__file__).parent
 # calling the div operator to concatenate - works on linux mac and windows
-assetsdir = rootdir / "assets"
-#could create the fonts and image dir
+ASSETSDIR = ROOTDIR / "assets"
+FONTS = ROOTDIR / ASSETSDIR / "fonts"
+IMAGES = ROOTDIR / ASSETSDIR / "images"
+SOUNDS = ROOTDIR / ASSETSDIR / "sounds"
+
 
 # -------------------------------------------------------------------------------------------------- 
 # GENERAL GAME CONSTANTS
@@ -29,17 +34,16 @@ FIELD_LEFT = 0
 FIELD_RIGHT = SCREEN_WIDTH
 
 # FONT
-FONT_SERIF = assetsdir / "fonts" / "Quicksand-Medium.ttf"
-# "assets\\fonts\Quicksand-Medium.ttf"
-FONT_SCRIPT = assetsdir / "fonts"/"Sacramento-Regular.ttf"
+FONT_SERIF = ASSETSDIR / FONTS / "Quicksand-Medium.ttf"
+FONT_SCRIPT = ASSETSDIR / FONTS /"Sacramento-Regular.ttf"
 FONT_SMALL = 25
 FONT_LARGE = 50
 
 # SOUND
-BOUNCE_SOUND = assetsdir /"sounds" / "ice.wav"
-WELCOME_SOUND = assetsdir / "sounds" / "splash.wav"
-OVER_SOUND = assetsdir / "sounds" / "bubbles.wav"
-MUSIC = assetsdir / "sounds" / "happyfeet.mp3"
+BOUNCE_SOUND = ASSETSDIR / SOUNDS / "ice.wav"
+WELCOME_SOUND = ASSETSDIR / SOUNDS / "splash.wav"
+OVER_SOUND = ASSETSDIR / SOUNDS / "bubbles.wav"
+MUSIC = ASSETSDIR / SOUNDS / "happyfeet.mp3"
 
 # TEXT
 ALIGN_CENTER = 0
@@ -110,7 +114,7 @@ SCORE_FORMAT = "Cheezy Dibbles: {}"
 
 # ICE CUBES
 ICE_GROUP = "ice"
-ICE_IMAGE = assetsdir /"images" / "smlice.png"
+ICE_IMAGE = ASSETSDIR / IMAGES / "smlice.png"
 ICE_WIDTH = 200
 ICE_HEIGHT = 488
 ICE_VELOCITY = 4
@@ -118,7 +122,9 @@ ICE_QUANTITY = 25
 
 # JUMPER PENGUIN
 PENGUIN_GROUP = "penguins"
-PENGUIN_IMAGES = assetsdir /"images" / "smlskipper.png"
+PENGUIN_IMAGES = Image(ASSETSDIR /"images" / "smlskipper.png")
+
+# PENGUIN_IMAGES = ASSETSDIR / IMAGES / "smlskipper.png"
 PENGUIN_WIDTH = 132
 PENGUIN_HEIGHT = 136
 PENGUIN_VELOCITY = 5
@@ -128,7 +134,7 @@ PENGUIN_RATE = 6
 # TODO if theres time.
 # CHEEZY DIBBLES
 DIBBLE_GROUP = "dibbles"
-DIBBLE_IMAGE = assetsdir / "images" / "cheeto.png"
+DIBBLE_IMAGE = ASSETSDIR / IMAGES / "cheeto.png"
 DIBBLE_POINTS = 50
 
 # DIALOG

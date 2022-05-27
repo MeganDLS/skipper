@@ -24,6 +24,7 @@ class RaylibVideoService(VideoService):
         pyray.clear_background(raylib_color)
 
     def draw_image(self, image, position):
+        # filepath = image.name()
         filepath = image.get_filename()
         # fixed os dependent filepath
         filepath = str(pathlib.Path(filepath))
@@ -77,7 +78,7 @@ class RaylibVideoService(VideoService):
         
     def flush_buffer(self):
         pyray.end_drawing()
-
+    
     def initialize(self):
         pyray.set_target_fps(60)
         pyray.init_window(self._width, self._height, self._title)
