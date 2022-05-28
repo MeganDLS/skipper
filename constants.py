@@ -103,9 +103,10 @@ HUD_MARGIN = 15
 SCORE_GROUP = "score"
 LEVEL_GROUP = "level"
 LIVES_GROUP = "lives"
-LEVEL_FORMAT = "Skipper"
+# LEVEL_FORMAT = "Skipper"
 
 #TODO switch out penguin with each life or level
+LEVEL_FORMAT = "Scene: {}"
 LIVES_FORMAT = "Lives: {}"
 SCORE_FORMAT = "Cheezy Dibbles: {}"
 
