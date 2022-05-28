@@ -146,24 +146,24 @@ class SceneManager:
     
     def _activate_penguin(self, cast):
         penguin = cast.get_first_actor(PENGUIN_GROUP)
-        penguin.jump()
+        # penguin.move_next()
 
-    # def _add_ice(self, cast):
-    #     cast.clear_actors(ICE_GROUP)
+    def _add_ice(self, cast):
+        cast.clear_actors(ICE_GROUP)
 
-    #     stats = cast.get_first_actor(STATS_GROUP)
+        stats = cast.get_first_actor(STATS_GROUP)
 
-    #     x = SCREEN_WIDTH / 3
-    #     y = CENTER_Y / 5
-    #     position = Point(x, y)
-    #     size = Point(ICE_WIDTH, ICE_HEIGHT)
-    #     #TODO Not velocity?
-    #     velocity = Point(0, 0)
-    #     body = Body()
-    #     image = Image(ICE_IMAGE)
-    #     #TODO animation
-    #     ice = Ice(body, image, True)
-    #     cast.add_actor(ICE_GROUP, ice)
+        # x = SCREEN_WIDTH / 3
+        # y = CENTER_Y / 5
+        # position = Point(x, y)
+        # size = Point(ICE_WIDTH, ICE_HEIGHT)
+        # #TODO Not velocity?
+        # velocity = Point(0, 0)
+        # body = Body()
+        # image = Image(ICE_IMAGE)
+        # #TODO animation
+        # ice = Ice(body, image, True)
+        # cast.add_actor(ICE_GROUP, ice)
 
     def _add_penguin(self, cast):
         cast.clear_actors(PENGUIN_GROUP)
@@ -173,52 +173,26 @@ class SceneManager:
         size = Point(PENGUIN_WIDTH, PENGUIN_HEIGHT)
         velocity = Point(0, 0)
         body = Body(position, size, velocity)
-        # animation = Animation(RACKET_IMAGES, RACKET_RATE)
         image = Image(PENGUIN_IMAGES, PENGUIN_RATE)
         penguin = Penguin(body, image)
         cast.add_actor(PENGUIN_GROUP, penguin)
 
-    # def _add_penguin(self, cast):
-    #     cast.clear_actors(PENGUIN_GROUP)
-    #     x = CENTER_X / 2
-    #     y = CENTER_Y / 2
-    #     position = Point(x, y)
-    #     size = Point(PENGUIN_WIDTH, PENGUIN_HEIGHT)
-    #     #TODO Not Penguin velocity?
-    #     body = Body()
-    #     image = Image(PENGUIN_IMAGES)
-    #     velocity = Point(0, 0)
-    #     # body = Body()
-    #     penguin = Penguin(body, image, True)
-    #     cast.add_actor(PENGUIN_GROUP, penguin)
-
     def _activate_ice(self, cast):
         ice = cast.get_first_actor(ICE_GROUP)
-        ice.wrap()
+        ice.move_next()
 
-    def _add_ice(self, cast):
-        cast.clear_actors(ICE_GROUP)
-        stats = cast.get_first_actor(STATS_GROUP)
-
-
-        # for ice in ICE_GROUP:
-        #     ice.move_next()
-
-        # for i in range(len(self._segments) -1, 0, -1):
-        #     trailing = self._segments[i]
-        #     previous = self._segments[i - 1]
-        #     velocity = previous.get_velocity()
-        #     trailing.set_velocity(velocity)
-
-        # position = Point(x, y)
-        # size = Point(BRICK_WIDTH, BRICK_HEIGHT)
-        # velocity = Point(0, 0)
-        # images = BRICK_IMAGES[color][0:frames]
-        # body = Body(position, size, velocity)
-        # animation = Animation(images, BRICK_RATE, BRICK_DELAY)
-
-        # brick = Brick(body, animation, points)
-        # cast.add_actor(BRICK_GROUP, brick)
+    # def _add_ice(self, cast):
+    #     cast.clear_actors(ICE_GROUP)
+    #     stats = cast.get_first_actor(STATS_GROUP)
+    #     x = FIELD_RIGHT - ICE_WIDTH
+    #     y = FIELD_TOP - 200
+    #     position = Point(x, y)
+    #     size = Point(ICE_WIDTH, ICE_HEIGHT)
+    #     velocity = Point(0, 0)
+    #     body = Body(position, size, velocity)
+    #     image = Image(ICE_IMAGE)
+    #     ice = Ice(position, size, velocity)
+    #     cast.add_actor(ICE_GROUP, ice)
         
     def _add_dialog(self, cast, message):
         cast.clear_actors(DIALOG_GROUP)

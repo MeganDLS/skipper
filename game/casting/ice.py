@@ -29,10 +29,18 @@ class Ice(Actor):
         """
         return self._image
 
+    def move_next(self):
+        """Moves to the left or just down
+        """
+        position = self._body.get_position()
+        velocity = self._body.get_velocity()
+        new_position = position.add(velocity)
+        self._body.set_position(new_position)
 
     #appear
     #TODO move?
-    def ice_berg(self):
+    def ice_melt(self):
+        #wrap around the x's
         for n in range(ICE_QUANTITY):
             vx = random.choice([10, SCREEN_WIDTH])
             vy = random.randint(5, SCREEN_HEIGHT - 400)
@@ -44,23 +52,9 @@ class Ice(Actor):
             # position = Point(x, y)
             # position = position.scale(ICE_WIDTH)
 
-    def move_next(self):
-        """Moves to the left or just down
-        """
-        position = self._body.get_position()
-        velocity = self._body.get_velocity()
-        new_position = position.add(velocity)
-        self._body.set_position(new_position)
-
         # x = (self._position.get_x() + self._velocity.get_x()) % max_x
         # y = (self._position.get_y() + self._velocity.get_y()) % max_y
         # self._position = Point(x, y)
-
-
-    
-
-    def wrap():
-        pass
 
     def get_points(self):
         """Gets the brick's points.
