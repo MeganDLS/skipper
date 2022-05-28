@@ -51,10 +51,8 @@ ALIGN_RIGHT = 2
 BLACK = Color(0, 0, 0)
 WHITE = Color(255, 255, 255)
 PURPLE = Color(109, 104, 117)
-MAUVE = Color(181, 131, 141)
 ICE = Color(219, 241, 253)
 PEACH = Color(255, 180, 162)
-TAN = Color(255, 205, 178)
 
 # KEYS
 LEFT = "left"
@@ -72,9 +70,10 @@ NEXT_LEVEL = 2
 IN_PLAY = 3
 GAME_OVER = 4
 
+#### TODO
 # # LEVELS
-# LEVEL_FILE = "assets\\data\\level-{:03}.txt"
-# BASE_LEVELS = 5
+LEVEL_FILE = ASSETSDIR / "data" / "level-{:03}.txt"
+BASE_LEVELS = 5
 
 # -------------------------------------------------------------------------------------------------- 
 # SCRIPTING CONSTANTS
@@ -105,13 +104,14 @@ SCORE_GROUP = "score"
 LEVEL_GROUP = "level"
 LIVES_GROUP = "lives"
 LEVEL_FORMAT = "Skipper"
-#TODO switch out penguin with each life
+
+#TODO switch out penguin with each life or level
 LIVES_FORMAT = "Lives: {}"
 SCORE_FORMAT = "Cheezy Dibbles: {}"
 
 # ICE CUBES
 ICE_GROUP = "ice"
-ICE_IMAGE = ASSETSDIR / IMAGES / "smlice.png"
+ICE_IMAGE = Image(ASSETSDIR / IMAGES / "smlice.png")
 ICE_WIDTH = 200
 ICE_HEIGHT = 488
 ICE_VELOCITY = 4
