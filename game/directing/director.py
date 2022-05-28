@@ -21,7 +21,7 @@ class Director(ActionCallback):
         self._script = Script()
         self._scene_manager = SceneManager()
         
-    def on_next(self, scene):
+    def on_next_scene(self, scene):
         """Overriden ActionCallback method transitions to next scene.
         
         Args:
@@ -31,13 +31,16 @@ class Director(ActionCallback):
         
     def start_game(self):
         """Starts the game. Runs the main game loop."""
-        self.on_next(NEW_GAME)
+        # SETUP
+        self.on_next_scene(SCENE_NEW_GAME)
         self._execute_actions(INITIALIZE)
         self._execute_actions(LOAD)
+        # LOOP OVER ACTIONS
         while self._video_service.is_window_open():
             self._execute_actions(INPUT)
             self._execute_actions(UPDATE)
             self._execute_actions(OUTPUT)
+        # CLEANUP
         self._execute_actions(UNLOAD)
         self._execute_actions(RELEASE)
         
