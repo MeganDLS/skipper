@@ -19,5 +19,5 @@ class CollidePenguinAction(Action):
 
         if self._physics_service.has_collided(ice_body, penguin_body):
             penguin.bounce_y()
-            sound = Sound(BOUNCE_SOUND)
+            sound = Sound(CLINK_SOUND)
             self._audio_service.play_sound(sound)   

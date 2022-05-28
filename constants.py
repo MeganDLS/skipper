@@ -4,15 +4,13 @@ from pathlib import Path
 from game.casting.color import Color
 from game.casting.image import Image
 
-#absolute path -- what is the parent directory?
+#Set up an absolute pathto see what the parent directory is
 ROOTDIR = Path(__file__).parent
-# calling the div operator to concatenate - works on linux mac and windows
+#Calling the div operator to concatenate - works on linux mac and windows.
 ASSETSDIR = ROOTDIR / "assets"
 FONTS = ROOTDIR / ASSETSDIR / "fonts"
 IMAGES = ROOTDIR / ASSETSDIR / "images"
 SOUNDS = ROOTDIR / ASSETSDIR / "sounds"
-
-
 # -------------------------------------------------------------------------------------------------- 
 # GENERAL GAME CONSTANTS
 # -------------------------------------------------------------------------------------------------- 
@@ -35,12 +33,11 @@ FIELD_RIGHT = SCREEN_WIDTH
 
 # FONT
 FONT_SERIF = ASSETSDIR / FONTS / "Quicksand-Medium.ttf"
-FONT_SCRIPT = ASSETSDIR / FONTS /"Sacramento-Regular.ttf"
 FONT_SMALL = 25
 FONT_LARGE = 50
 
 # SOUND
-BOUNCE_SOUND = ASSETSDIR / SOUNDS / "ice.wav"
+CLINK_SOUND = ASSETSDIR / SOUNDS / "ice.wav"
 WELCOME_SOUND = ASSETSDIR / SOUNDS / "splash.wav"
 OVER_SOUND = ASSETSDIR / SOUNDS / "bubbles.wav"
 MUSIC = ASSETSDIR / SOUNDS / "happyfeet.mp3"

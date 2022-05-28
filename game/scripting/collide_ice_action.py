@@ -20,7 +20,7 @@ class CollideIceAction(Action):
 
             if self._physics_service.has_collided(penguin_body, ice_body):
                 penguin.bounce_y()
-                sound = Sound(BOUNCE_SOUND)
+                sound = Sound(CLINK_SOUND)
                 self._audio_service.play_sound(sound)
                 points = ice.get_points()
                 stats.add_points(points)
