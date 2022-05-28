@@ -68,16 +68,16 @@ class SceneManager:
         pass
 
     def prepare_scene(self, scene, cast, script):
-        if scene == NEW_GAME:
+        if scene == SCENE_NEW_GAME:
             self._prepare_new_game(cast, script)
             #TODO Add another level? prepare_next_level TRY_AGAIN
-        elif scene == NEXT_LEVEL:
+        elif scene == SCENE_NEXT_LEVEL:
             self._prepare_next_level(cast, script)
-        elif scene == TRY_AGAIN:
+        elif scene == SCENE_TRY_AGAIN:
             self._prepare_try_again(cast, script)
-        elif scene == IN_PLAY:
+        elif scene == SCENE_IN_PLAY:
             self._prepare_in_play(cast, script)
-        elif scene == GAME_OVER:    
+        elif scene == SCENE_GAME_OVER:    
             self._prepare_game_over(cast, script)
 
     # ----------------------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ class SceneManager:
         self._add_initialize_script(script)
         self._add_load_script(script)
         script.clear_actions(INPUT)
-        script.add_action(INPUT, ChangeSceneAction(self.KEYBOARD_SERVICE, NEXT_LEVEL))
+        script.add_action(INPUT, ChangeSceneAction(self.KEYBOARD_SERVICE, SCENE_NEXT_LEVEL))
         self._add_output_script(script)
         self._add_unload_script(script)
         self._add_release_script(script)
@@ -107,7 +107,7 @@ class SceneManager:
         self._add_dialog(cast, PREP_TO_LAUNCH)
 
         script.clear_actions(INPUT)
-        script.add_action(INPUT, TimedChangeSceneAction(IN_PLAY, 2))
+        script.add_action(INPUT, TimedChangeSceneAction(SCENE_IN_PLAY, 2))
         self._add_output_script(script)
         script.add_action(OUTPUT, PlaySoundAction(self.AUDIO_SERVICE, MUSIC))
 
@@ -117,7 +117,7 @@ class SceneManager:
         self._add_dialog(cast, PREP_TO_LAUNCH)
 
         script.clear_actions(INPUT)
-        script.add_action(INPUT, TimedChangeSceneAction(IN_PLAY, 2))
+        script.add_action(INPUT, TimedChangeSceneAction(SCENE_IN_PLAY, 2))
         self._add_update_script(script)
         self._add_output_script(script)
 
@@ -136,7 +136,7 @@ class SceneManager:
         self._add_dialog(cast, WAS_GOOD_GAME)
 
         script.clear_actions(INPUT)
-        script.add_action(INPUT, TimedChangeSceneAction(NEW_GAME, 5))
+        script.add_action(INPUT, TimedChangeSceneAction(SCENE_NEW_GAME, 5))
         script.clear_actions(UPDATE)
         self._add_output_script(script)
 

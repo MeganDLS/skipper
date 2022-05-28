@@ -31,7 +31,7 @@ class Director(ActionCallback):
         
     def start_game(self):
         """Starts the game. Runs the main game loop."""
-        self.on_next(NEW_GAME)
+        self.on_next(SCENE_NEW_GAME)
         self._execute_actions(INITIALIZE)
         self._execute_actions(LOAD)
         while self._video_service.is_window_open():
