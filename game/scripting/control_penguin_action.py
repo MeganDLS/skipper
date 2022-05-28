@@ -17,8 +17,8 @@ class ControlPenguinAction(Action):
         elif self._keyboard_service.is_key_down(RIGHT): 
             penguin.swing_right()  
             #TODO up and down?
-        # elif self._keyboard_service.is_key_down(UP): 
-        #     penguin.swing_up()  
+        elif self._keyboard_service.is_key_down(UP): 
+            penguin.swing_up()  
         # elif self._keyboard_service.is_key_down(DOWN): 
         #     penguin.swing_down()  
         else: 

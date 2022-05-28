@@ -20,7 +20,7 @@ class CollideIceAction(Action):
         
         for i in ice:
             penguin_body = penguin.get_body()
-            ice_body = ice.get_body()
+            ice_body = i.get_body()
 
             if self._physics_service.has_collided(penguin_body, ice_body):
                 penguin.bounce_y()

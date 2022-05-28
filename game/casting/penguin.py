@@ -14,23 +14,23 @@ class Penguin(Actor):
         self._body = body
         self._image = image
 
-    # def bounce_x(self):
-    #     """Bounces the ball in the x direction."""
-    #     velocity = self._body.get_velocity()
-    #     rn = random.uniform(0.9, 1.1)
-    #     vx = velocity.get_x() * rn * -1
-    #     vy = velocity.get_y()
-    #     velocity = Point(vx, vy)
-    #     self._body.set_velocity(velocity)
+    def bounce_x(self):
+        """Bounces the ball in the x direction."""
+        velocity = self._body.get_velocity()
+        rn = random.uniform(0.9, 1.1)
+        vx = velocity.get_x() * rn * -1
+        vy = velocity.get_y()
+        velocity = Point(vx, vy)
+        self._body.set_velocity(velocity)
 
-    # def bounce_y(self):
-    #     """Bounces the ball in the y direction."""
-    #     velocity = self._body.get_velocity()
-    #     rn = random.uniform(0.9, 1.1)
-    #     vx = velocity.get_x()
-    #     vy = velocity.get_y() * rn * -1 
-    #     velocity = Point(vx, vy)
-    #     self._body.set_velocity(velocity)
+    def bounce_y(self):
+        """Bounces the ball in the y direction."""
+        velocity = self._body.get_velocity()
+        rn = random.uniform(0.9, 1.1)
+        vx = velocity.get_x()
+        vy = velocity.get_y() * rn * -1 
+        velocity = Point(vx, vy)
+        self._body.set_velocity(velocity)
 
     def get_image(self):
         """Gets the image.
@@ -67,9 +67,9 @@ class Penguin(Actor):
         velocity = Point(PENGUIN_VELOCITY, 0)
         self._body.set_velocity(velocity)
 
-    # def swing_up(self):
-    #     velocity = Point(0, PENGUIN_VELOCITY)
-    #     self._body.set_velocity(velocity)
+    def swing_up(self):
+        velocity = Point(0, PENGUIN_VELOCITY)
+        self._body.set_velocity(velocity)
 
     #TODO jump over ice
 
