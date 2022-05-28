@@ -1,8 +1,6 @@
 """
 """
 import csv
-import pyray as p
-from raylib import LoadImageRaw
 from constants import *
 from game.casting.body import Body
 from game.casting.image import Image
@@ -67,23 +65,19 @@ class SceneManager:
 
 
     def __init__(self):
-        self._scene = None # DEBUG
         pass
 
     def prepare_scene(self, scene, cast, script):
-        self._scene = scene # DEBUG
-        if scene == SCENE_NEW_GAME:
+        if scene == NEW_GAME:
             self._prepare_new_game(cast, script)
-            
             #TODO Add another level? prepare_next_level TRY_AGAIN
-            #Add image here?
-        elif scene == SCENE_NEXT_LEVEL:
+        elif scene == NEXT_LEVEL:
             self._prepare_next_level(cast, script)
-        elif scene == SCENE_TRY_AGAIN:
+        elif scene == TRY_AGAIN:
             self._prepare_try_again(cast, script)
-        elif scene == SCENE_IN_PLAY:
+        elif scene == IN_PLAY:
             self._prepare_in_play(cast, script)
-        elif scene == SCENE_GAME_OVER:    
+        elif scene == GAME_OVER:    
             self._prepare_game_over(cast, script)
 
     # ----------------------------------------------------------------------------------------------
@@ -102,7 +96,7 @@ class SceneManager:
         self._add_initialize_script(script)
         self._add_load_script(script)
         script.clear_actions(INPUT)
-        script.add_action(INPUT, ChangeSceneAction(self.KEYBOARD_SERVICE, SCENE_NEXT_LEVEL))
+        script.add_action(INPUT, ChangeSceneAction(self.KEYBOARD_SERVICE, NEXT_LEVEL))
         self._add_output_script(script)
         self._add_unload_script(script)
         self._add_release_script(script)
@@ -113,7 +107,7 @@ class SceneManager:
         self._add_dialog(cast, PREP_TO_LAUNCH)
 
         script.clear_actions(INPUT)
-        script.add_action(INPUT, TimedChangeSceneAction(SCENE_IN_PLAY, 2))
+        script.add_action(INPUT, TimedChangeSceneAction(IN_PLAY, 2))
         self._add_output_script(script)
         script.add_action(OUTPUT, PlaySoundAction(self.AUDIO_SERVICE, MUSIC))
 
@@ -123,16 +117,13 @@ class SceneManager:
         self._add_dialog(cast, PREP_TO_LAUNCH)
 
         script.clear_actions(INPUT)
-        script.add_action(INPUT, TimedChangeSceneAction(SCENE_IN_PLAY, 2))
+        script.add_action(INPUT, TimedChangeSceneAction(IN_PLAY, 2))
         self._add_update_script(script)
         self._add_output_script(script)
 
     def _prepare_in_play(self, cast, script):
         self._activate_penguin(cast)
         cast.clear_actors(DIALOG_GROUP)
-        # while not p.window_should_close():
-        #     p.
-        #     # p.load_image_raw(BACKGROUND_SCENE, SCREEN_WIDTH, SCREEN_HEIGHT, int? , )
 
         script.clear_actions(INPUT)
         script.add_action(INPUT, self.CONTROL_PENGUIN_ACTION)
@@ -145,7 +136,7 @@ class SceneManager:
         self._add_dialog(cast, WAS_GOOD_GAME)
 
         script.clear_actions(INPUT)
-        script.add_action(INPUT, TimedChangeSceneAction(SCENE_NEW_GAME, 5))
+        script.add_action(INPUT, TimedChangeSceneAction(NEW_GAME, 5))
         script.clear_actions(UPDATE)
         self._add_output_script(script)
 
@@ -222,12 +213,11 @@ class SceneManager:
         position = Point(SCREEN_WIDTH - HUD_MARGIN, HUD_MARGIN)
         label = Label(text, position)
         cast.add_actor(LIVES_GROUP, label)
-
+    
     def _add_stats(self, cast):
         cast.clear_actors(STATS_GROUP)
         stats = Stats()
         cast.add_actor(STATS_GROUP, stats)
-        cast.add_actor("scene", scene)
 
     def _add_score(self, cast):
         cast.clear_actors(SCORE_GROUP)
