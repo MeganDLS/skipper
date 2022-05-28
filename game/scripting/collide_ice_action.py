@@ -13,6 +13,8 @@ class CollideIceAction(Action):
         
     def execute(self, cast, script, callback):
         penguin = cast.get_first_actor(PENGUIN_GROUP)
+        
+        
         ice = cast.get_actors(ICE_GROUP)
         stats = cast.get_first_actor(STATS_GROUP)
         

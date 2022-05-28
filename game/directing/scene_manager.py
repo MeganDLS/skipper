@@ -150,7 +150,6 @@ class SceneManager:
 
     def _add_ice(self, cast):
         cast.clear_actors(ICE_GROUP)
-
         stats = cast.get_first_actor(STATS_GROUP)
 
         # x = SCREEN_WIDTH / 3
@@ -159,11 +158,11 @@ class SceneManager:
         # size = Point(ICE_WIDTH, ICE_HEIGHT)
         # #TODO Not velocity?
         # velocity = Point(0, 0)
-        # body = Body()
-        # image = Image(ICE_IMAGE)
+        body = Body()
+        image = Image(ICE_IMAGE)
         # #TODO animation
-        # ice = Ice(body, image, True)
-        # cast.add_actor(ICE_GROUP, ice)
+        ice = Ice(body, image, True)
+        cast.add_actor(ICE_GROUP, ice)
 
     def _add_penguin(self, cast):
         cast.clear_actors(PENGUIN_GROUP)
