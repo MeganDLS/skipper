@@ -1,5 +1,5 @@
 # Skipper
-Skipper is a clone of the Frog jumping Game.
+Skipper is a penguin ice game.
 
 ## Getting Started
 ---

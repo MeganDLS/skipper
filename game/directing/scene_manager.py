@@ -113,7 +113,7 @@ class SceneManager:
 
     def _prepare_try_again(self, cast, script):
         self._add_penguin(cast)
-        #TODO try self._add_ice(cast)
+        self._add_ice(cast)
         self._add_dialog(cast, PREP_TO_LAUNCH)
 
         script.clear_actions(INPUT)

@@ -1,7 +1,8 @@
+"""
+"""
 from pathlib import Path
 from constants import ASSETSDIR
 from game.scripting.action import Action
-
 
 class LoadAssetsAction(Action):
 

@@ -1,9 +1,9 @@
-#TODO maybe cheesy dibbles.
-
+"""
+"""
 from constants import *
-# from game.casting.ball import Ball
 from game.scripting.action import Action
 
+#TODO maybe cheesy dibbles.
 
 class ControlPenguinAction(Action):
 
@@ -18,8 +18,8 @@ class ControlPenguinAction(Action):
             penguin.swing_right()  
             #TODO up and down?
         # elif self._keyboard_service.is_key_down(UP): 
-        #     racket.swing_up()  
+        #     penguin.swing_up()  
         # elif self._keyboard_service.is_key_down(DOWN): 
-        #     racket.swing_down()  
+        #     penguin.swing_down()  
         else: 
             penguin.stop_moving()        

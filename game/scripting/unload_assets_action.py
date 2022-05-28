@@ -1,5 +1,6 @@
+"""
+"""
 from game.scripting.action import Action
-
 
 class UnloadAssetsAction(Action):
 
